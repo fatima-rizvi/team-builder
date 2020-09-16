@@ -2,18 +2,19 @@ import React, { useState } from 'react'
 import { render } from 'react-dom'
 
 export default function TeamForm(props) {
-    const { values, update, submit } = props
+    const { values, update, submit, memberToEdit, edit } = props
 
     const onChange = evt => {
         const { name, value } = evt.target
         update(name, value)
-        // console.log(evt.target.text);
+        console.log(evt);
+        console.log(evt.target);
     }
       
     const onSubmit = evt => {
         evt.preventDefault()
         submit()
-      }
+      } 
 
     return (
         <div>

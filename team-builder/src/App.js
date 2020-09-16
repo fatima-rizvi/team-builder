@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TeamForm from './Form'
 import logo from './logo.svg';
 import './App.css';
@@ -25,6 +25,8 @@ function App() {
 
   const [formValues, setFormValues] = useState(initialFormValues)
 
+  const [memberToEdit, setMemberToEdit] = useState({})
+
   const updateForm = (inputName, inputValue) => {
     setFormValues({
       ...formValues,
@@ -45,6 +47,10 @@ function App() {
     setFormValues(initialFormValues)
   }
 
+  const edit = useEffect((member) => {
+    setFormValues(member)
+  },[memberToEdit])
+
   return (
     <div className="App">
       <div className = 'container display-team'>
@@ -64,6 +70,7 @@ function App() {
                     <p><span className = 'bold-text'>Alias: </span>{member.alias}</p>
                     <p><span className = 'bold-text'>Email: </span>{member.email}</p>
                   </div>
+                  <button onClick = {edit}>Edit</button>
                 </div>
               )
             })
@@ -74,7 +81,9 @@ function App() {
         <TeamForm className = 'team-form'
           values = {formValues}
           update = {updateForm}
-          submit = {submitForm}/>
+          submit = {submitForm}
+          memberToEdit = {memberToEdit}
+          edit = {edit}/>
       </div>
     </div>
   );
