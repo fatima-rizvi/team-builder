@@ -4,8 +4,8 @@ import logo from './logo.svg';
 import './App.css';
 
 const teamList = [
-  { name: 'Nicholas Fury', email: 'director@shield.gov.', role: 'Founder', alias: 'Scorpio' },
-  { name: 'Peter Parker', email: 'pbparker@midtownsct.edu.', role: 'Member', alias: 'Spiderman' },
+  { name: 'Nicholas Fury', email: 'director@shield.gov', role: 'Founder', alias: 'Scorpio' },
+  { name: 'Peter Parker', email: 'pbparker@midtownsct.edu', role: 'Member', alias: 'Spiderman' },
   { name: 'Tony Stark', email: 'tonystark@starkenterprises.com', role: 'Leader', alias: 'Iron Man' },
   { name: 'Carol Danvers', email: 'cdanvers@shield.gov', role: 'Member', alias: 'Captain Marvel' },
 ]
@@ -26,8 +26,6 @@ function App() {
   const [formValues, setFormValues] = useState(initialFormValues)
 
   const updateForm = (inputName, inputValue) => {
-    // 🔥 STEP 8 - IMPLEMENT a "form state updater" which will be used inside the inputs' `onChange` handler
-    //  It takes in the name of an input and its value, and updates `formValues`
     setFormValues({
       ...formValues,
       [inputName]: inputValue
@@ -36,8 +34,6 @@ function App() {
   }
 
   const submitForm = () => {
-    // 🔥 STEP 9 - IMPLEMENT a submit function which will be used inside the form's own `onSubmit`
-    //  a) make a new friend object, trimming whitespace from username and email
     const newMember = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
