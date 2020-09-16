@@ -41,10 +41,9 @@ export default function TeamForm(props) {
             <label>Role: 
                 <select name = 'role' value = {values.role} onChange = {onChange}>
                     <option value = ''>-- select role --</option>
-                    <option value = 'Founder'>Founder</option>
-                    <option value = 'Leader'>Leader</option>
-                    <option value = 'Member'>Member</option>
-                    <option value = 'Recruit'>Recruit</option>
+                    <option value = 'Frontend Engineer'>Frontend Engineer</option>
+                    <option value = 'Backend Engineer'>Backend Engineer</option>
+                    <option value = 'Designer'>Designer</option>
                 </select>
             </label>
             <button disabled={!values.name || !values.email || !values.role}>Submit</button>

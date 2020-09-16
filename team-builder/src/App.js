@@ -4,9 +4,10 @@ import logo from './logo.svg';
 import './App.css';
 
 const teamList = [
-  { name: 'Peter', email: 'peter@lambda.com', role: 'frontend engineer' },
-  { name: 'Tony', email: 'tony@lambda.com', role: 'backend engineer' },
-  { name: 'Carol', email: 'carol@lambda.com', role: 'designer' },
+  { name: 'Nicholas Fury', email: 'director@shield.gov.', role: 'Founder' },
+  { name: 'Peter Parker', email: 'pbparker@midtownsct.edu.', role: 'Member' },
+  { name: 'Tony Stark', email: 'tonystark@starkenterprises.com', role: 'Leader' },
+  { name: 'Carol Danvers', email: 'cdanvers@shield.gov', role: 'Member' },
 ]
 
 const initialFormValues = {
@@ -48,27 +49,22 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {
-        teamMembers.map((member, idx) => {
-          return <div key={idx}>{member.name} is a {member.role}. Their email is {member.email}</div>
-        })
-      }
-      <div>
-        <TeamForm 
+      <div className = 'container display-team'>
+        <h1>Avenger's Team Lineup</h1>
+        <h3>Contact Information</h3>
+        {
+          teamMembers.map((member, idx) => {
+            return (
+              <div className = 'person-details' key={idx}>
+                <h4>{member.name}: {member.role}</h4>
+                <p>Email: {member.email}</p>
+              </div>
+            )
+          })
+        }
+      </div>
+      <div className = 'container'>
+        <TeamForm className = 'team-form'
           values = {formValues}
           update = {updateForm}
           submit = {submitForm}/>
