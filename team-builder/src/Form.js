@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { render } from 'react-dom'
 
 export default function TeamForm(props) {
-    const { values, update, submit, memberToEdit, edit } = props
+    const { values, update, submit, 
+        // memberToEdit, edit
+     } = props
 
     const onChange = evt => {
         const { name, value } = evt.target

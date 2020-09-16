@@ -47,9 +47,9 @@ function App() {
     setFormValues(initialFormValues)
   }
 
-  const edit = useEffect((member) => {
-    setFormValues(member)
-  },[memberToEdit])
+  // const edit = useEffect((member) => {
+  //   setFormValues(member)
+  // },[memberToEdit])
 
   return (
     <div className="App">
@@ -70,7 +70,7 @@ function App() {
                     <p><span className = 'bold-text'>Alias: </span>{member.alias}</p>
                     <p><span className = 'bold-text'>Email: </span>{member.email}</p>
                   </div>
-                  <button onClick = {edit}>Edit</button>
+                  {/* <button onClick = {edit}>Edit</button> */}
                 </div>
               )
             })
@@ -83,7 +83,8 @@ function App() {
           update = {updateForm}
           submit = {submitForm}
           memberToEdit = {memberToEdit}
-          edit = {edit}/>
+          // edit = {edit}
+          />
       </div>
     </div>
   );
