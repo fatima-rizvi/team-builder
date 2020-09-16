@@ -2,6 +2,10 @@ html {
   background-color: #1a1c29;
 }
 
+*{
+  max-width: 100%;
+}
+
 .App {
   text-align: center;
   /* background-color: #1a1c29; */
@@ -42,13 +46,71 @@ html {
   }
 }
 
+.team-header {
+  border: 1px solid #3b83f2;
+  border-radius: 4px;
+  box-shadow: 0px 2px 12px -4px #3b83f2;
+  padding: .5rem;
+  background-color: #cacad6;
+  color: #233a64;
+  margin: 1.5rem;
+}
+
 .container {
   border: 1px solid rgb(210, 210, 210);
   border-radius: 4px;
   box-shadow: 0px 4px 24px -8px #3b83f2;
-  padding: 32px;
+  padding: 3rem;
   background-color: #606471;
   color: white;
   margin: 3rem;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.person-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.member {
+  border: 1px solid #3b83f2;
+  border-radius: 4px;
+  box-shadow: 0px 2px 12px -4px #3b83f2;
+  padding: .5rem;
+  background-color: #cacad6;
+  color: #233a64;
+  margin:.25rem;
+  margin-bottom: 2rem;
+  width: 22%;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.person-main {
+  font-size: 1.2rem;
+}
+
+.person-details {
+  font-size: 1.0rem;
+}
+
+.team-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+input, select {
+  margin: .25rem;
+}
+
+button {
+  margin: .25rem;
 }

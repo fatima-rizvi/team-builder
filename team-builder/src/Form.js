@@ -16,38 +16,50 @@ export default function TeamForm(props) {
       }
 
     return (
-        <form onSubmit = {onSubmit}>
+        <div>
             <h1>Team Form</h1>
-            <label>Name: 
-                <input 
-                    type = 'text'
-                    name = 'name'
-                    onChange = {onChange}
-                    value = {values.name}
-                    placeholder = 'type a name'
-                />
-            </label>
+            <form className = 'team-form' onSubmit = {onSubmit}>
+                <label>Name: 
+                    <input 
+                        type = 'text'
+                        name = 'name'
+                        onChange = {onChange}
+                        value = {values.name}
+                        placeholder = 'enter name'
+                    />
+                </label>
 
-            <label>Email: 
-                <input 
-                    type = 'text'
-                    name = 'email'
-                    onChange = {onChange}
-                    value = {values.email}
-                    placeholder = 'enter your email'
-                />
-            </label>
+                <label>Email: 
+                    <input 
+                        type = 'text'
+                        name = 'email'
+                        onChange = {onChange}
+                        value = {values.email}
+                        placeholder = 'enter email'
+                    />
+                </label>
 
-            <label>Role: 
-                <select name = 'role' value = {values.role} onChange = {onChange}>
-                    <option value = ''>-- select role --</option>
-                    <option value = 'Founder'>Founder</option>
-                    <option value = 'Leader'>Leader</option>
-                    <option value = 'Member'>Member</option>
-                    <option value = 'Recruit'>Recruit</option>
-                </select>
-            </label>
-            <button disabled={!values.name || !values.email || !values.role}>Submit</button>
-        </form>
+                <label>Alias: 
+                    <input 
+                        type = 'text'
+                        name = 'alias'
+                        onChange = {onChange}
+                        value = {values.alias}
+                        placeholder = 'enter alias'
+                    />
+                </label>
+
+                <label>Role: 
+                    <select name = 'role' value = {values.role} onChange = {onChange}>
+                        <option value = ''>-- select role --</option>
+                        <option value = 'Founder'>Founder</option>
+                        <option value = 'Leader'>Leader</option>
+                        <option value = 'Member'>Member</option>
+                        <option value = 'Recruit'>Recruit</option>
+                    </select>
+                </label>
+                <button disabled={!values.name || !values.email || !values.role || !values.alias}>Submit</button>
+            </form>
+        </div>
     )
 }

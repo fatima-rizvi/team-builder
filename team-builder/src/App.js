@@ -4,16 +4,17 @@ import logo from './logo.svg';
 import './App.css';
 
 const teamList = [
-  { name: 'Nicholas Fury', email: 'director@shield.gov.', role: 'Founder' },
-  { name: 'Peter Parker', email: 'pbparker@midtownsct.edu.', role: 'Member' },
-  { name: 'Tony Stark', email: 'tonystark@starkenterprises.com', role: 'Leader' },
-  { name: 'Carol Danvers', email: 'cdanvers@shield.gov', role: 'Member' },
+  { name: 'Nicholas Fury', email: 'director@shield.gov.', role: 'Founder', alias: 'Scorpio' },
+  { name: 'Peter Parker', email: 'pbparker@midtownsct.edu.', role: 'Member', alias: 'Spiderman' },
+  { name: 'Tony Stark', email: 'tonystark@starkenterprises.com', role: 'Leader', alias: 'Iron Man' },
+  { name: 'Carol Danvers', email: 'cdanvers@shield.gov', role: 'Member', alias: 'Captain Marvel' },
 ]
 
 const initialFormValues = {
   ///// TEXT INPUTS /////
   name: '',
   email: '',
+  alias: '',
   ///// DROPDOWN /////
   role: '',
 }
@@ -40,6 +41,7 @@ function App() {
     const newMember = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
+      alias: formValues.alias.trim(),
       role: formValues.role,
     }
 
@@ -50,18 +52,27 @@ function App() {
   return (
     <div className="App">
       <div className = 'container display-team'>
-        <h1>Avenger's Team Lineup</h1>
-        <h3>Contact Information</h3>
-        {
-          teamMembers.map((member, idx) => {
-            return (
-              <div className = 'person-details' key={idx}>
-                <h4>{member.name}: {member.role}</h4>
-                <p>Email: {member.email}</p>
-              </div>
-            )
-          })
-        }
+        <div className = 'team-header'>
+          <h1>Avenger's Team Lineup</h1>
+          <h3>Contact Information</h3>
+        </div>
+        <div className = 'person-holder'>
+          {
+            teamMembers.map((member, idx) => {
+              return (
+                <div className = 'member' key={idx}>
+                  <div className = 'person-main'>
+                    <p><span className = 'bold-text'>{member.name}: </span>{member.role}</p>
+                  </div>
+                  <div className = 'person-details'>
+                    <p><span className = 'bold-text'>Alias: </span>{member.alias}</p>
+                    <p><span className = 'bold-text'>Email: </span>{member.email}</p>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
       <div className = 'container'>
         <TeamForm className = 'team-form'
